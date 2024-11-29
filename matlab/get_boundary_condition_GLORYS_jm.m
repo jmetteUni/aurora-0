@@ -18,9 +18,9 @@ close all;
 %addpath('../roms_matlab/netcdf');
 %addpath('../roms_matlab/mexcdf/mexnc');
 
-app_dir = '/home/jonathan/Dokumente/model/roms_project/aurora-0/matlab/';
-GRD_file = 'grid-M350L300.nc';
-GRDname = fullfile(app_dir,GRD_file);
+app_dir = '/home/jonathan/Dokumente/model/roms_project/aurora-0/';
+GRD_file = 'grid-M512L512.nc';
+GRDname = fullfile(app_dir,'/Data',GRD_file);
 NEMO_dir = 'Dokumente/model/inputs/boundary_conditions';
 NEMO_name = 'cmems_mod_glo_phy_myint_0.083deg_P1M-m_1719414538489.nc';
 NEMOfile = fullfile(NEMO_dir,NEMO_name);
@@ -43,7 +43,7 @@ date_nemo=linspace(date_start,date_end,nemo_ntime);
 % set output file directory and name
 %BRY_dir = app_dir;
 BRY_file = sprintf('%s_bry_nemo_%s_%s.nc',GRD_file(1:end-3),datestr(date_start,'yyyymmddTHH'),datestr(date_end,'yyyymmddTHH'));
-BRYname = fullfile(app_dir,BRY_file);
+BRYname = fullfile(app_dir,'/Data',BRY_file);
 
 CREATE = 1;                      % logical switch to create NetCDF
 WRITE  = 1;                      % logical switch to write out data

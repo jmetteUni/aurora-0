@@ -10,10 +10,10 @@ close all;
 % Path to ROMS grid file
 %griddir = '/home/jonathan/Dokumente/model/files_guangyu/model_file_EPR/input';
 %gridname = 'EPR_grid_coarse.nc';
-appdir = '/home/jonathan/Dokumente/model/roms_project/aurora-0/matlab/';
+appdir = '/home/jonathan/Dokumente/model/roms_project/aurora-0/';
 %griddir = '/home/jonathan/Dokumente/model/inputs/Gridbuilder';
 gridname = 'grid-M512L512.nc';
-grid = fullfile(appdir,gridname);
+grid = fullfile(appdir,'/Data',gridname);
 % Base date for ROMS forcing files
 mybasedate = datenum(2022,07,26,0,0,0);
 dates = datenum(2022,07,26,0,0,0);
@@ -35,7 +35,7 @@ end
 % Path to output forcing files
 %outdir = 'F:\projects\ocean_modeling\ROMS\Endeavour\cruise_2023\input';
 %outdir = '/home/jonathan/Dokumente/model/boundary_conditions';
-outdir = appdir;
+outdir = fullfile(appdir,'/Data');
 if ~exist(outdir,'dir')
     mkdir(outdir)
 end
