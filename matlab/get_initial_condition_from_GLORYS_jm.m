@@ -1,4 +1,4 @@
-% This program is used to create initial condition files from NEMO data
+scp% This program is used to create initial condition files from NEMO data
 %created by G.Xu
 %modified by J. Mette, 20/04/2024
 
