@@ -12,8 +12,9 @@ close all;
 %gridname = 'EPR_grid_coarse.nc';
 appdir = '/home/jonathan/Dokumente/model/roms_project/aurora-0/';
 %griddir = '/home/jonathan/Dokumente/model/inputs/Gridbuilder';
-gridname = 'grid-M512L512.nc';
-grid = fullfile(appdir,'/Data',gridname);
+%GRD_file = 'grid-M512L512.nc';
+GRD_file = 'grid-M265L265.nc';
+grid = fullfile(appdir,'/Data',GRD_file);
 % Base date for ROMS forcing files
 mybasedate = datenum(2022,07,26,0,0,0);
 dates = datenum(2022,07,26,0,0,0);
@@ -67,13 +68,13 @@ mode = bitor(mode,netcdf.getConstant('64BIT_OFFSET'));
 
 
 %% create the nc file    %bhflux: heat flux, bwflux: salt flux
-F(1).output = sprintf('%s_bhflux_%dMW%s_%s.nc',gridname(1:end-3),heat_vent,coarsefine,datestr(eruption_date,'yyyymmddTHH'));
+F(1).output = sprintf('%s_bhflux_%dMW%s_%s.nc',GRD_file(1:end-3),heat_vent,coarsefine,datestr(eruption_date,'yyyymmddTHH'));
 F(1).Vname = 'bhflux';
 F(1).Tname = 'bhf_time';
-%F(2).output = sprintf('%s_bwflux_Kellog_120day_1_vent.nc',gridname(1:end-3));
+%F(2).output = sprintf('%s_bwflux_Kellog_120day_1_vent.nc',GRD_file(1:end-3));
 %F(2).Vname = 'bwflux';
 %F(2).Tname = 'bwf_time';
-% F(2).output = sprintf('%s_bpflux_%s.nc',gridname(1:end-3),datestr(eruption_date,'yyyymmddTHH'));
+% F(2).output = sprintf('%s_bpflux_%s.nc',GRD_file(1:end-3),datestr(eruption_date,'yyyymmddTHH'));
 % F(2).Vname = 'dye_01_bflux';
 % F(2).Tname = 'ocean_time';
 for n = 1:length(F)
