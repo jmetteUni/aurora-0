@@ -21,6 +21,8 @@ close all;
 app_dir = '/home/jonathan/Dokumente/model/roms_project/aurora-0/';
 %GRD_file = 'grid-M512L512.nc';
 GRD_file = 'grid-M265L265.nc';
+GRD_file = 'grid-M128L128.nc';
+
 GRDname = fullfile(app_dir,'/Data',GRD_file);
 NEMO_dir = 'Dokumente/model/inputs/boundary_conditions';
 NEMO_name = 'cmems_mod_glo_phy_myint_0.083deg_P1M-m_1719414538489.nc';
